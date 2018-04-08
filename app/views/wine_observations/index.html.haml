@@ -1,0 +1,7 @@
+%h1 Wine Data Viewer
+
+.nav
+  = link_to "Show pair plot", pair_plot_path
+
+.dataframe
+  = render_dataframe @dataframe

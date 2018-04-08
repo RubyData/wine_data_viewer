@@ -1,0 +1,10 @@
+%h1 Pair Plot
+
+.nav
+  = link_to "Show Dataframe", root_path
+
+#form
+  = render 'form', dataframe: @dataframe, columns: @columns
+
+#chart
+  = render_pairplot(@dataframe, columns: @columns)

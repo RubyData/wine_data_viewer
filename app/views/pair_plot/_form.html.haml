@@ -1,0 +1,9 @@
+= form_with url: pair_plot_path, method: :patch,
+            data: {remote: false} do |f|
+  .column_selection
+    - selectable_columns = dataframe.columns.tolist.to_a - %w[wine_class]
+    = f.select :columns, selectable_columns,
+                {selected: columns, include_blank: false},
+                {multiple: true, size: selectable_columns.length}
+  .submit_button
+    = f.submit 'Update Chart'
